@@ -41,22 +41,42 @@ const quotes = [
     source: 'J.K Rowling',
     citation: 'J.K. Rowling',
     year: '2008'
-  };
+  }
 ];
-
 
 
 /***
  * `getRandomQuote` function
 ***/
 
+function getRandomQuote () {
+  let randomNumber = Math.floor( Math.random() * 5)
+  let randomObject = quotes[randomNumber];
+  return randomObject;
+};
 
 
 /***
  * `printQuote` function
 ***/
 
+function printQuote () {
+  let randomQuote = getRandomQuote();
+  let html = 
+    `<p class = "quote">${randomQuote['quote']}</p>
+    <p class = "source">${randomQuote['source']}</p>`
+  
+  if (randomQuote['citation']) {
+    html += `<span class = "citation" >${randomQuote['citation']}</span>`
+  };
+  
+  if (randomQuote['year']) {
+    html += `<span class = "year">${randomQuote['year']}</span>`
+  };
 
+  document.getElementById('quote-box').innerHTML = html; 
+
+};
 
 /***
  * click event listener for the print quote button
