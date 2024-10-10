@@ -11,6 +11,39 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 
+const quotes = [
+  {
+    quote: 'Fear is the mind-killer.',
+    source: 'Lady Jessica Atreides',
+    citation: 'Dune: Part One',
+    year: ''
+  },
+  {
+    quote: 'I will take the ring though I do not know the way.',
+    source: 'Frodo Baggins',
+    citation: 'Lord of the Rings: The Fellowship of the Ring',
+    year: ''
+  },
+  {
+    quote: 'Every man dies, not every man really lives.',
+    source: 'William Wallce',
+    citation: 'Braveheart',
+    year: ''
+  },
+  {
+    quote: 'It is not in doing what you like, but in liking what you do that is the secret of happiness.',
+    source: 'Peter Pan',
+    citation: 'Peter Pan',
+    year: ''
+  },
+  {
+    quote: 'You will never truly know yourself, or the strength of your relationships, until both have been tested by adversity.',
+    source: 'J.K Rowling',
+    citation: 'J.K. Rowling',
+    year: '2008'
+  };
+];
+
 
 
 /***
