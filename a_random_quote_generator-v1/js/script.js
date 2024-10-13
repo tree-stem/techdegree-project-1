@@ -13,13 +13,13 @@ const quotes = [
     citation: 'Dune: Part One',
     year: ''
   },
-  {
+    {
     quote: 'I will take the ring though I do not know the way.',
     source: 'Frodo Baggins',
     citation: 'Lord of the Rings: The Fellowship of the Ring',
     year: ''
   },
-  {
+    {
     quote: 'Every man dies, not every man really lives.',
     source: 'William Wallace',
     citation: 'Braveheart',
