@@ -89,7 +89,6 @@ function getRandomQuote() {
   } while (randomNumber === lastQuoteIndex);
 
   lastQuoteIndex = randomNumber;
-  console.log(quotes[randomNumber].quote);
   return quotes[randomNumber];
 }
 
