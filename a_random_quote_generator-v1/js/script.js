@@ -48,7 +48,7 @@ function getRandomQuote() {
   return randomObject;
 }
 
-// Created a function that displays a different random quote and a random background color
+// Created a function that displays the selected random quote
 
 function printQuote() {
   let randomQuote = getRandomQuote();
@@ -62,11 +62,65 @@ function printQuote() {
   if (randomQuote["year"]) {
     html += `<span class = "year">${randomQuote["year"]}</span>`;
   }
+}
+
+// Created functions to generate a random background color for each quote displayed
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomColor() {
+  const red = getRandomNumber(0, 255);
+  const green = getRandomNumber(0, 255);
+  const blue = getRandomNumber(0, 255);
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+let lastQuoteIndex = -1;
+
+// Created a a function so that a the same quote cannot be displayed twice in a row
+
+function getRandomQuote() {
+  let randomNumber;
+
+  do {
+    randomNumber = Math.floor(Math.random() * 5);
+  } while (randomNumber === lastQuoteIndex);
+
+  lastQuoteIndex = randomNumber;
+  console.log(quotes[randomNumber].quote);
+  return quotes[randomNumber];
+}
+
+// Created a function to display the random quote and its properties
+
+function printQuote() {
+  document.body.style.backgroundColor = getRandomColor();
+  const quoteBox = document.getElementById("quote-box");
+  quoteBox.innerHTML = "";
+  let randomQuote = getRandomQuote();
+  let html = `
+    <p class="quote">${randomQuote["quote"]}</p>
+    <p class="source">${randomQuote["source"]}
+    `;
+
+  if (randomQuote["citation"]) {
+    html += `<span class="citation">${randomQuote["citation"]}</span>`;
+  }
+
+  if (randomQuote["year"]) {
+    html += `<span class="year">${randomQuote["year"]}</span>`;
+  }
 
   html += "</p>";
 
   document.getElementById("quote-box").innerHTML = html;
 }
+
+// Calls printQuote function to display a quote once the page loads
+
+printQuote();
 
 /***
  * click event listener for the print quote button
