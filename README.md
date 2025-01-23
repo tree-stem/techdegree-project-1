@@ -1,2 +1,2 @@
 # Techdegree Project 1
- A random quote generator.
+An array of quotes randomly displayed on user clicks.
